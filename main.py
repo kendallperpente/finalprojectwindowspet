@@ -13,7 +13,7 @@ sleep_num = [10, 11, 12, 13, 15]
 walk_left = [6, 7]
 walk_right = [8, 9]
 event_number = random.randrange(1, 3, 1)
-impath = 'C:\\Users\\kperp\\OneDrive\\Desktop\\2024-Code\\finalprojectwindowspet\\'
+impath = './'
 
 # Function to handle events
 def event(cycle, check, event_number, x):
