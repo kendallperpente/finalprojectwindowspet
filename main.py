@@ -92,8 +92,6 @@ walk_negative = [tk.PhotoImage(file=impath + 'walk_negative.gif', format='gif -i
 
 # Window configuration
 window.config(highlightbackground='black')
-#window.overrideredirect(True)
-#window.wm_attributes('-transparentcolor', 'black')
 
 # Create a label to display images
 label = tk.Label(window, bd=0, bg='black')
@@ -101,9 +99,14 @@ label.pack()
 
 # Start the animation loop
 window.after(1, update, cycle, check, event_number, x)
-window.mainloop()
 
 # Function to handle key press event
 def on_key_press(event):
     if event.keysym == 'q':
-        root.quit()  # Close the Tkinter window when "q" is pressed
+        window.quit()  # Close the Tkinter window when "q" is pressed
+
+# Bind the "q" key press event
+window.bind("<KeyPress>", on_key_press)
+
+# Start the Tkinter main loop
+window.mainloop()
