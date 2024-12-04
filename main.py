@@ -102,3 +102,8 @@ label.pack()
 # Start the animation loop
 window.after(1, update, cycle, check, event_number, x)
 window.mainloop()
+
+# Function to handle key press event
+def on_key_press(event):
+    if event.keysym == 'q':
+        root.quit()  # Close the Tkinter window when "q" is pressed
