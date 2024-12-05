@@ -105,4 +105,12 @@ label.pack()
 #loop the program
 window.after(1,update,cycle,check,event_number,x,y)
 
+# Function to handle key press event
+def on_key_press(event):
+    if event.keysym == 'q':
+        root.quit()  # Close the Tkinter window when "q" is pressed
+        window.quit()  # Close the Tkinter window when "q" is pressed
+# Bind the "q" key press event
+window.bind("<KeyPress>", on_key_press)
+
 window.mainloop()
