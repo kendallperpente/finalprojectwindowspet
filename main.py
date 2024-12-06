@@ -2,6 +2,7 @@ import random
 import tkinter as tk
 from flask import Flask, request, jsonify
 import threading
+import webbrowser
 
 app = Flask(__name__)
 
@@ -111,4 +112,6 @@ def launch_pet():
 
 
 if __name__ == "__main__":
+    # Open the Flask app in the default browser
+    threading.Timer(1, lambda: webbrowser.open("http://127.0.0.1:5000")).start()
     app.run(debug=True, host="0.0.0.0")
