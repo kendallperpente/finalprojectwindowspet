@@ -8,7 +8,7 @@ from pyvirtualdisplay import Display  # For virtual display in headless environm
 
 # Start virtual display (use only if required in headless environments)
 try:
-    display = Display(visible=0, size=(800, 600))
+    display = Display(visible=0, size=(1200, 1600))
     display.start()
     print("Virtual display started.")
 except Exception as e:
