@@ -39,6 +39,11 @@ def start_tkinter():
     try:
         window = tk.Tk()
 
+        # Remove window borders and make it seamless
+        window.overrideredirect(True)
+        window.wm_attributes('-topmost', 1)
+        window.configure(bg='white')  # Sets background to white
+
         def event(cycle, check, event_number, x, y):
             if event_number in idle_num:
                 check = 0
@@ -93,7 +98,7 @@ def start_tkinter():
             label.configure(image=frame)
             window.after(1, event, cycle, check, event_number, x, y)
 
-        label = tk.Label(window, bd=0)
+        label = tk.Label(window, bd=0, highlightthickness=0, bg='white')  # Transparent background
         label.pack()
 
         # Load GIF frames and validate paths
@@ -109,9 +114,8 @@ def start_tkinter():
             return
 
         window.after(1, update, cycle, check, event_number, x, y)
-        window.overrideredirect(True)
-        window.wm_attributes('-topmost', 1)
         window.mainloop()
+
     except Exception as e:
         print(f"Error in start_tkinter: {e}")
 
