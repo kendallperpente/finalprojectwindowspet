@@ -103,7 +103,7 @@ def start_tkinter():
 
         # Load GIF frames and validate paths
         try:
-            idle = [tk.PhotoImage(file=impath + 'walkleft(1).gif', format='gif -index %i' % i) for i in range(5)]
+            idle = [tk.PhotoImage(file=impath + 'idle.gif', format='gif -index %i' % i) for i in range(5)]
             idle_to_sleep = [tk.PhotoImage(file=impath + 'sleep2.gif', format='gif -index %i' % i) for i in range(8)]
             sleep = [tk.PhotoImage(file=impath + 'idle2.gif', format='gif -index %i' % i) for i in range(3)]
             sleep_to_idle = [tk.PhotoImage(file=impath + 'hold.gif', format='gif -index %i' % i) for i in range(8)]
