@@ -8,7 +8,7 @@ from pyvirtualdisplay import Display  # For virtual display in headless environm
 
 # Start virtual display (use only if required in headless environments)
 try:
-    display = Display(visible=0, size=(1200, 1600))
+    display = Display(visible=0, size=(800, 600))
     display.start()
     print("Virtual display started.")
 except Exception as e:
@@ -104,11 +104,11 @@ def start_tkinter():
         # Load GIF frames and validate paths
         try:
             idle = [tk.PhotoImage(file=impath + 'idle.gif', format='gif -index %i' % i) for i in range(5)]
-            idle_to_sleep = [tk.PhotoImage(file=impath + 'sleep2.gif', format='gif -index %i' % i) for i in range(8)]
-            sleep = [tk.PhotoImage(file=impath + 'idle2.gif', format='gif -index %i' % i) for i in range(3)]
-            sleep_to_idle = [tk.PhotoImage(file=impath + 'hold.gif', format='gif -index %i' % i) for i in range(8)]
-            walk_positive = [tk.PhotoImage(file=impath + 'fall(1).gif', format='gif -index %i' % i) for i in range(8)]
-            walk_negative = [tk.PhotoImage(file=impath + 'eat(1).gif', format='gif -index %i' % i) for i in range(8)]
+            idle_to_sleep = [tk.PhotoImage(file=impath + 'idle_to_sleep.gif', format='gif -index %i' % i) for i in range(8)]
+            sleep = [tk.PhotoImage(file=impath + 'sleep.gif', format='gif -index %i' % i) for i in range(3)]
+            sleep_to_idle = [tk.PhotoImage(file=impath + 'sleep_to_idle.gif', format='gif -index %i' % i) for i in range(8)]
+            walk_positive = [tk.PhotoImage(file=impath + 'walk_positive.gif', format='gif -index %i' % i) for i in range(8)]
+            walk_negative = [tk.PhotoImage(file=impath + 'walk_negative.gif', format='gif -index %i' % i) for i in range(8)]
         except Exception as e:
             print(f"Error loading GIFs: {e}")
             return
